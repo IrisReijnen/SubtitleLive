@@ -1,3 +1,5 @@
 # Table of contents
 
-* [SubtitleLive](README.md)
+* [Whisper](README.md)
+* [Ollama](ollama.md)
+* [READ ME PLZ](read-me-plz.md)
