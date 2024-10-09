@@ -22,13 +22,8 @@ This guide will walk you through how to install and run Ollama in Docker, set up
     ```bash
     docker pull ollama/llama3.1
     ```
-3.  Check if the image is installed by running:
 
-    ```bash
-    bashCopy codedocker images
-    ```
-
-    You should see the Ollama image in the list.
+    You should see the Ollama image appear in the docker desktop application.
 
 #### Step 3: Set Up a Python Environment
 
@@ -36,13 +31,13 @@ This guide will walk you through how to install and run Ollama in Docker, set up
 2. Open VS Code and create a new file named `main.py`.
 3. Press `Ctrl + Shift + P` to open the command palette.
 4. Type and select "Python: Create Environment."
-5. Wait for the environment to load. You will then be prompted to choose between `venv` and `conda`. Select `venv`.
+5. Wait for the environment to load. You will then be prompted to choose between `venv`, `conda` etc. We recommend using venv but others are possible.
 6. Choose to create a new environment.
 7. After the environment is set up, make sure it is activated.
 8.  Install the required Python package with this command in the terminal:
 
     ```bash
-    bashCopy codepip install requests
+    pip install requests
     ```
 
 #### Step 4: Install Whisper, Torch, and Sounddevice
@@ -50,17 +45,17 @@ This guide will walk you through how to install and run Ollama in Docker, set up
 1.  Install Whisper using the following command:
 
     ```bash
-    bashCopy codepip install git+https://github.com/openai/whisper.git
+    pip install git+https://github.com/openai/whisper.git
     ```
 2.  Install `torch`, which is required for Whisper:
 
     ```bash
-    bashCopy codepip install torch
+    pip install torch
     ```
 3.  Install `sounddevice` to manage audio input/output for Whisper:
 
     ```bash
-    bashCopy codepip install sounddevice
+    pip install sounddevice
     ```
 
 #### Step 5: Test the Ollama Setup
@@ -68,9 +63,10 @@ This guide will walk you through how to install and run Ollama in Docker, set up
 1.  Copy and paste the following Python script into a file in your project (for example, `test_script.py`):
 
     ```python
-    pythonCopy codeimport requests
+    import requests
     import json
 
+    #make sure the port is correct it could differ depending on the setup
     url = 'http://localhost:11434/api/generate'
     data = {
         "model": "llama3.1",
@@ -94,7 +90,7 @@ This guide will walk you through how to install and run Ollama in Docker, set up
 2.  Run the script by typing:
 
     ```bash
-    bashCopy codepython test_script.py
+    python test_script.py
     ```
 3. This script will send a request to the Llama model, asking, "Why is the sky blue?" and print the response. Ensure that Docker is running, and the Ollama image is active.
 
