@@ -1,5 +1,5 @@
 # Table of contents
 
 * [READ ME PLZ](README.md)
-* [Whisper](<README (1).md>)
+* [Whisper](whisper.md)
 * [Ollama](ollama.md)
